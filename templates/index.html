@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Risk Rating</title>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    
+<<div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+      <h3>Klasifikasi Risk Rating Credit Score</h3>
+      <p class="blue-text">Calvin Rifansyah Ardhana - 200411100072<br>Penambangan Data C</p>
+      <div class="card">
+        <h5 class="text-center mb-4">Masukkan Inputan Data</h5>
+        <form class="form-card" action="/" method="post" onsubmit="">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3" for="pendapatan_setahun_juta">Pendapatan Setahun Juta<span class="text-danger">*</span></label>
+              <input type="text" name="pendapatan_setahun_juta" id="pendapatan_setahun_juta" placeholder="" onblur="validate(1)" required>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3" for="durasi_pinjaman_bulan">Durasi Pinjaman Bulan<span class="text-danger">*</span></label> 
+              <input type="text" name="durasi_pinjaman_bulan" id="durasi_pinjaman_bulan" placeholder="" onblur="validate(2)" required>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3" for="jumlah_tanggungan">Jumlah Tanggungan<span class="text-danger">*</span></label> 
+              <input type="text" name="jumlah_tanggungan" id="jumlah_tanggungan" placeholder="" onblur="validate(3)" required>
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3" for="TIDAK">TIDAK<span class="text-danger">*</span></label> 
+              <input type="text" name="TIDAK" id="TIDAK" placeholder="" onblur="validate(4)" required>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3" for="YA">YA<span class="text-danger">*</span></label> 
+              <input type="text" name="YA" id="YA" placeholder="" onblur="validate(5)" required>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3" for="inp_rata">Inputan Rata<span class="text-danger">*</span></label>
+              <input type="text" name="inp_rata" id="inp_rata" placeholder="" onblur="validate(6)" required>
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex"> Hasil Risk Rating adalah {{ prediction_text }} </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Risk Rating</button> </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+  
+</html>
